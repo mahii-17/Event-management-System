@@ -1,103 +1,115 @@
-Event Management System (EMS) 📅
+# 📅 Event Management System (EMS)
 
-1. General Introduction
+> **A robust console-based application designed to manage events, bookings, and reporting using core Python concepts.**
 
-Events involve managing distinct data points: venues, dates, pricing, and attendee counts. This Event Management System (EMS) is a robust console-based application designed to replace manual record-keeping.
+![Python](https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge&logo=python)
+![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
 
-It utilizes File Handling to ensure data persists even after the program closes, and creates a dynamic HTML Dashboard for visual reporting.
+## 📖 Overview
 
-2. Technical Showcase
+This project was developed as part of the **L&T Python Refresher Program**. It serves as a practical demonstration of distinct data management (venues, dates, pricing, attendee counts) without relying on external databases.
 
-This project was architected specifically to demonstrate mastery of the core Python concepts covered in the refresher program:
+The system replaces manual record-keeping by utilizing **File Handling** for data persistence and generating a dynamic **HTML Dashboard** for visual reporting.
 
-OOP (Object Oriented Programming):
+## 🚀 Key Features
 
-Event Class: Acts as a blueprint for data objects.
+- **Add Events**: Create new events with validation for name, date, and pricing.
+- **Book Tickets**: Real-time booking system that updates attendee counts instantly.
+- **Data Persistence**: All data is saved to `events_data.txt` (CSV format), ensuring nothing is lost when the program closes.
+- **Auto-Generated Reports**: Generates a styled `dashboard.html` file and automatically opens it in your browser.
+- **Error Handling**: Robust inputs (e.g., preventing text in price fields) to ensure the application never crashes.
 
-EventManager Class: Encapsulates business logic and file operations.
+## 🛠️ Technical Showcase
 
-File Handling:
+This project is architected to demonstrate mastery of the following Python concepts:
 
-Read/Write: Manually parses CSV data from events_data.txt.
+- **OOP (Object Oriented Programming)**:
+  - `Event` Class: Blueprint for data objects.
+  - `EventManager` Class: Encapsulates business logic and file operations.
+- **Modular Programming**: Code is split into logical modules (`main.py`, `manager.py`, `event.py`) for better maintainability.
+- **File Handling**: Manual parsing of CSV data and programmatic generation of HTML files.
 
-Report Generation: Programmatically creates an external dashboard.html file using string manipulation.
+## 📂 Project Structure
 
-Exception Handling:
-
-Robust try-except blocks prevent crashes during invalid user input (e.g., entering text for price).
-
-Safely handles missing directories or files using os.path.
-
-Modular Programming:
-
-Code is split into logical modules (main.py, manager.py, event.py) rather than one large script.
-
-3. Project Structure
-
+````bash
 Event-Management-System/
 │
-├── assets/ # 📸 Screenshots for documentation
-│ ├── menu.png
-│ ├── add_event.png
-│ ├── booking.png
-│ └── report.png
+├── assets/                  # 📸 Screenshots for documentation
+│   ├── add_event.png
+│   ├── booking.png
+│   ├── menu.png
+│   └── report.png
 │
-├── data/ # 💾 Database storage
-│ └── events_data.txt # (Auto-generated CSV file)
+├── reports/                 # 📊 Visual Output
+│   └── dashboard.html       # (Auto-generated HTML Report)
 │
-├── reports/ # 📊 Visual Output
-│ └── dashboard.html # (Auto-generated HTML Report)
+├── event.py                 # 🐍 Module: Event Object Blueprint
+├── events_data.txt          # 💾 Database (CSV format)
+├── manager.py               # 🐍 Module: Logic & File Handling
+├── main.py                  # 🐍 Entry Point (Run this file)
 │
-├── event.py # 🐍 Module: Event Object Blueprint
-├── manager.py # 🐍 Module: Logic & File Handling
-├── main.py # 🐍 Entry Point (Run this file)
-│
-└── README.md # 📄 Project Documentation
+└── README.md                # 📄 Project Documentation
+## 💻 Installation & Run
 
-4. How to Run
+Since this project uses Python's Standard Library, no external installation (`pip install`) is required.
 
-Since this project uses Python's Standard Library, no external installation (pip install) is required.
+1. **Clone the repository**
+   ```bash
+   git clone [https://github.com/mahii-17/Event-management-System.git](https://github.com/mahii-17/Event-management-System.git)
+   cd Event-management-System
 
-Clone the repository:
+2. **Run the application**
+   ```bash
+   python main.py
 
-git clone [https://github.com/your-username/Event-Management-System.git](https://github.com/your-username/Event-Management-System.git)
-cd Event-Management-System
+## 📸 Application Walkthrough
 
-Run the application:
+### 1. 🏠 Main Menu
+The application launches a clean CLI loop that remains active until `Exit` is selected.
+Navigate using **number key options**.
 
-python main.py
+### 2. ✨ Adding an Event
+Users can input event details. The system validates:
+- **Price** ➝ must be numeric
+- **Date** ➝ stored in correct format
 
-5. Application Walkthrough
+🗂 **Backend Storage:** Data is instantly saved in
+`events_data.txt`
 
-1. Main Menu
+🖼 Icon: `assets/add_event.png`
 
-The application launches a CLI (Command Line Interface) loop that stays active until the user chooses to exit.
+### 3. 🎟 Booking Tickets
+Reads the database in real time, displays all listed events, and lets the user increase attendee counts.
 
-2. Adding an Event (Data Entry)
+🛡 **Validation:** Prevents invalid event IDs to avoid crashes.
 
-Users can input event details. This module uses Exception Handling to ensure Price is always a valid number.
+🖼 Icon: `assets/booking.png`
 
-Input: Name, Date, Price.
+### 4. 📊 Visual Reporting
+Processes text data and generates a **styled HTML report** in:
+- `reports/dashboard.html`
 
-Backend: Data is immediately committed to data/events_data.txt.
+Then automatically opens in the default browser.
 
-3. Booking Tickets
+🖼 Icon: `assets/report.png`
 
-This module reads the database in real-time. It lists all active events and allows the user to increment the attendee count.
+---
 
-Validation: If a user selects an invalid ID (e.g., "3" when only 1 event exists), the system catches the error and prompts again to ensure stability.
+## 🔮 Future Scope
 
-4. HTML Report Generation
+| Feature | Description |
+|---------|------------|
+| 💻 GUI Version | Port logic to Tkinter / PyQt for desktop UI |
+| ✉ Email Integration | Auto email confirmation after booking |
+| 🗄 Database Migration | Move from `.txt` to SQLite for scalable queries |
 
-The standout feature. By processing the text data, the Python script generates a styled HTML table and automatically launches your default web browser to display it.
+---
 
-6. Future Scope
+### 🏗 Built With
+- Python 🐍
+- CLI-based interface
+- Custom HTML rendering
 
-GUI Version: Porting the logic to Tkinter for a desktop window experience.
-
-Email Integration: Sending automatic confirmation emails to attendees.
-
-Database Migration: Upgrading from Text Files to SQLite for complex queries.
-
-© 2025 | Built with Python 🐍
-This is a mini project for L&T Python Refresher Program.
+© 2025 | Event Management System
+````
