@@ -32,7 +32,7 @@ This project is architected to demonstrate mastery of the following Python conce
 
 ## 📂 Project Structure
 
-````bash
+```bash
 Event-Management-System/
 │
 ├── assets/                  # 📸 Screenshots for documentation
@@ -50,71 +50,92 @@ Event-Management-System/
 ├── main.py                  # 🐍 Entry Point (Run this file)
 │
 └── README.md                # 📄 Project Documentation
-
+```
 
 ## 🧰 Installation & Run
 
 Since this project uses Python's Standard Library, no external installation (`pip install`) is required.
 
 ### 1. **Clone the repository**
+
 ```bash
 git clone https://github.com/mahii-17/Event-management-System.git
 cd Event-management-System
 ```
 
 ### 2. **Run the application**
+
 ```bash
 python main.py
 ```
 
-
 ## 📸 Application Walkthrough
 
 ### 1. 🏠 Main Menu
+
 The application launches a clean CLI loop that remains active until `Exit` is selected.
 Navigate using **number key options**.
 
+### Screenshot: Main Menu
+
+![Menu](assets/menu.png)
+
 ### 2. ✨ Adding an Event
+
 Users can input event details. The system validates:
+
 - **Price** ➝ must be numeric
 - **Date** ➝ stored in correct format
 
 🗂 **Backend Storage:** Data is instantly saved in
 `events_data.txt`
 
-🖼 Icon: `assets/add_event.png`
+### Screenshot: Add Event Page
+
+![Add Event Feature](assets/add_event.png)
 
 ### 3. 🎟 Booking Tickets
+
 Reads the database in real time, displays all listed events, and lets the user increase attendee counts.
 
 🛡 **Validation:** Prevents invalid event IDs to avoid crashes.
 
-🖼 Icon: `assets/booking.png`
+### Screenshot: Ticket Booking
+
+![Ticket Booking](assets/booking.png)
 
 ### 4. 📊 Visual Reporting
+
 Processes text data and generates a **styled HTML report** in:
+
 - `reports/dashboard.html`
 
 Then automatically opens in the default browser.
 
-🖼 Icon: `assets/report.png`
+### Screenshot: Report Generated
+
+![Report](assets/report.png)
 
 ---
 
 ## 🔮 Future Scope
 
-| Feature | Description |
-|---------|------------|
-| 💻 GUI Version | Port logic to Tkinter / PyQt for desktop UI |
-| ✉ Email Integration | Auto email confirmation after booking |
+| Feature              | Description                                     |
+| -------------------- | ----------------------------------------------- |
+| 💻 GUI Version       | Port logic to Tkinter / PyQt for desktop UI     |
+| ✉ Email Integration  | Auto email confirmation after booking           |
 | 🗄 Database Migration | Move from `.txt` to SQLite for scalable queries |
 
 ---
 
 ### 🏗 Built With
+
 - Python 🐍
 - CLI-based interface
 - Custom HTML rendering
 
 © 2025 | Event Management System
-````
+
+```
+
+```
