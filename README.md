@@ -2,7 +2,7 @@
 
 > **A robust console-based application designed to manage events, bookings, and reporting using core Python concepts.**
 
-![Python](https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge&logo=python)
+![Python](https://img.shields.io/badge/Python-3.13-blue?style=for-the-badge&logo=python)
 ![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
 
@@ -50,18 +50,23 @@ Event-Management-System/
 ├── main.py                  # 🐍 Entry Point (Run this file)
 │
 └── README.md                # 📄 Project Documentation
-## 💻 Installation & Run
+
+
+## 🧰 Installation & Run
 
 Since this project uses Python's Standard Library, no external installation (`pip install`) is required.
 
-1. **Clone the repository**
-   ```bash
-   git clone [https://github.com/mahii-17/Event-management-System.git](https://github.com/mahii-17/Event-management-System.git)
-   cd Event-management-System
+### 1. **Clone the repository**
+```bash
+git clone https://github.com/mahii-17/Event-management-System.git
+cd Event-management-System
+```
 
-2. **Run the application**
-   ```bash
-   python main.py
+### 2. **Run the application**
+```bash
+python main.py
+```
+
 
 ## 📸 Application Walkthrough
 
